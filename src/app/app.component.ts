@@ -1,22 +1,18 @@
+import { TransferenciaService } from './services/transferencia.service';
 import { Component } from '@angular/core';
-import { NovaTransferenciaComponent } from './nova-transferencia/nova-transferencia.component';
-import { TrasferenciaService } from './services/trasferencia.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
   title = 'bytebank';
+  transferencias: any[] = [];
 
-  constructor (private services: TrasferenciaService) {
-    
+  constructor(private service: TransferenciaService) {}
+
+  transferir($event) {
+    this.service.adicionar($event).subscribe(x => console.log(x));
   }
-
-  transferir($event: any){
-   
-    this.services.adicionar($event);
-    
-  };
 }

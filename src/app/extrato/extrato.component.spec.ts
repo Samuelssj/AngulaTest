@@ -11,7 +11,9 @@ describe('ExtratoComponent', () => {
       declarations: [ ExtratoComponent ]
     })
     .compileComponents();
+  });
 
+  beforeEach(() => {
     fixture = TestBed.createComponent(ExtratoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
